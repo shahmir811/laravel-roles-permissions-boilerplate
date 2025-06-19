@@ -81,117 +81,21 @@ Seeded by `RolesTableSeeder`:
 
 Seeded by `UsersTableSeeder`, with the following credentials:
 
-Name
-
-Email
-
-Role
-
-Password
-
-Sami Ullah Ata
-
-[sami@gmail.com](mailto:sami@gmail.com)
-
-super-admin
-
-123456
-
-Shahmir Khan Jadoon
-
-[shahmirkj@gmail.com](mailto:shahmirkj@gmail.com)
-
-super-admin
-
-123456
-
-Syed Talha Masood
-
-[talha@gmail.com](mailto:talha@gmail.com)
-
-admin
-
-123456
-
-Harris Khan
-
-[harris@gmail.com](mailto:harris@gmail.com)
-
-admin
-
-123456
-
-Mehrunisa
-
-[mehrunisa@gmail.com](mailto:mehrunisa@gmail.com)
-
-user
-
-123456
-
-Rizwan Khan
-
-[rizwan@gmail.com](mailto:rizwan@gmail.com)
-
-user
-
-123456
-
-Shamshad Bano
-
-[shamshad@gmail.com](mailto:shamshad@gmail.com)
-
-user
-
-123456
-
-Akbar Khan
-
-[akbar@gmail.com](mailto:akbar@gmail.com)
-
-user
-
-123456
-
-Ahmed Nabi
-
-[ahmed@gmail.com](mailto:ahmed@gmail.com)
-
-user
-
-123456
-
-Nabeel Suleman
-
-[nabeel@gmail.com](mailto:nabeel@gmail.com)
-
-user
-
-123456
-
-Farhan Khan
-
-[farhan@gmail.com](mailto:farhan@gmail.com)
-
-user
-
-123456
-
-Sudais Masood
-
-[sudais@gmail.com](mailto:sudais@gmail.com)
-
-user
-
-123456
-
-Mumraiz Nuqashband
-
-[mumraiz@gmail.com](mailto:mumraiz@gmail.com)
-
-user
-
-123456
+| Name                | Email                                             | Role        | Password |
+| ------------------- | ------------------------------------------------- | ----------- | -------- |
+| Sami Ullah Ata      | [sami@gmail.com](mailto:sami@gmail.com)           | super-admin | 123456   |
+| Shahmir Khan Jadoon | [shahmirkj@gmail.com](mailto:shahmirkj@gmail.com) | super-admin | 123456   |
+| Syed Talha Masood   | [talha@gmail.com](mailto:talha@gmail.com)         | admin       | 123456   |
+| Harris Khan         | [harris@gmail.com](mailto:harris@gmail.com)       | admin       | 123456   |
+| Mehrunisa           | [mehrunisa@gmail.com](mailto:mehrunisa@gmail.com) | user        | 123456   |
+| Rizwan Khan         | [rizwan@gmail.com](mailto:rizwan@gmail.com)       | user        | 123456   |
+| Shamshad Bano       | [shamshad@gmail.com](mailto:shamshad@gmail.com)   | user        | 123456   |
+| Akbar Khan          | [akbar@gmail.com](mailto:akbar@gmail.com)         | user        | 123456   |
+| Ahmed Nabi          | [ahmed@gmail.com](mailto:ahmed@gmail.com)         | user        | 123456   |
+| Nabeel Suleman      | [nabeel@gmail.com](mailto:nabeel@gmail.com)       | user        | 123456   |
+| Farhan Khan         | [farhan@gmail.com](mailto:farhan@gmail.com)       | user        | 123456   |
+| Sudais Masood       | [sudais@gmail.com](mailto:sudais@gmail.com)       | user        | 123456   |
+| Mumraiz Nuqashband  | [mumraiz@gmail.com](mailto:mumraiz@gmail.com)     | user        | 123456   |
 
 > Use one of the `super-admin` credentials to log in and manage the app.
 
@@ -226,14 +130,10 @@ routes/
 
 ## 📌 Next Steps
 
--   -   ✅ Add API endpoints (optional)
--
--   -   ✅ Integrate frontend (Vue/React) if needed
--
--   -   ✅ Extend CRUD for other models
--
--   -   ✅ Add unit/integration tests
--   ***
+-   ✅ Add API endpoints (optional)
+-   ✅ Integrate frontend (Vue/React) if needed
+-   ✅ Extend CRUD for other models
+-   ✅ Add unit/integration tests
 
 ## 🤝 Contributing
 
