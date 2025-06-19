@@ -34,7 +34,6 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            @role('super-admin|admin')
                             <a class="dropdown-item" href="{{ route('users.index') }}">Users</a>
                             @can('view session')
                             <a class="dropdown-item" href="{{ route('active-sessions') }}">Active Sessions</a>
@@ -43,8 +42,6 @@
                             @can('view backup')
                             <a class="dropdown-item" href="{{ route('backups.index') }}">Backups</a>
                             @endcan
-
-                            @endrole
                             <a class="dropdown-item" href="{{ route('logout') }}"
                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}

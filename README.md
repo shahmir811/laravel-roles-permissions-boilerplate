@@ -20,11 +20,11 @@ A Laravel starter boilerplate integrated with essential Spatie packages: **Permi
 
 ## 📦 Packages Used
 
-| Package                                                                   | Purpose                                   |
-| ------------------------------------------------------------------------- | ----------------------------------------- |
-| [spatie/laravel-permission](https://github.com/spatie/laravel-permission) | Role & permission management              |
-| [spatie/laravel-sluggable](https://github.com/spatie/laravel-sluggable)   | Automatically generate SEO-friendly slugs |
-| [spatie/laravel-backup](https://github.com/spatie/laravel-backup)         | Backup your app and database              |
+| Package                                                                                | Purpose                                   |
+| -------------------------------------------------------------------------------------- | ----------------------------------------- |
+| [spatie/laravel-permission](https://spatie.be/docs/laravel-permission/v6/introduction) | Role & permission management              |
+| [spatie/laravel-sluggable](https://github.com/spatie/laravel-sluggable)                | Automatically generate SEO-friendly slugs |
+| [spatie/laravel-backup](https://spatie.be/docs/laravel-backup/v9/introduction)         | Backup your app and database              |
 
 ---
 

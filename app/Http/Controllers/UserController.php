@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use Spatie\Permission\Models\Role;
+use App\Models\Role;
+use App\Models\Permission;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -81,7 +82,19 @@ class UserController extends Controller
     public function edit(User $user)
     {
         $roles = Role::all();
-        return view("pages.role-permission.user.edit", compact("user", "roles"));
+        $permissions = Permission::all();
+
+        // Permissions inherited from roles
+        $rolePermissions = $user->roles->flatMap(function ($role) {
+            return $role->permissions->pluck('name');
+        })->unique();
+
+        // Permissions assigned directly
+        $directPermissions = $user->getDirectPermissions()->pluck('name');
+
+        return view("pages.role-permission.user.edit", compact(
+            "user", "roles", "permissions", "rolePermissions", "directPermissions"
+        ));
     }
 
     /**
@@ -95,11 +108,9 @@ class UserController extends Controller
             "role" => "required",
         ]);
 
-        $data = [
-            "name"=> $request->name,
-        ];
+        $data = ["name" => $request->name];
 
-        if(!empty($request->password)) {
+        if (!empty($request->password)) {
             $data["password"] = Hash::make($request->password);
         }
 
@@ -107,8 +118,22 @@ class UserController extends Controller
 
         $user->syncRoles($request->role);
 
+        // Get permissions attached to role
+        $rolePermissions = $user->roles->flatMap(function ($role) {
+            return $role->permissions->pluck('name');
+        })->unique();
+
+        // Remove inherited ones before syncing
+        $directPermissions = collect($request->permissions)->filter(function ($perm) use ($rolePermissions) {
+            return !$rolePermissions->contains($perm);
+        });
+
+        $user->syncPermissions($directPermissions);
+
         return redirect()->route("users.index")->with("status", "User updated successfully");
     }
+
+
 
     /**
      * Remove the specified resource from storage.

@@ -79,6 +79,7 @@
                       <th scope="col">Email</th>
                       <th scope="col">Status</th>
                       <th scope="col">Role</th>
+                      <th scope="col">Extra Permissions</th>
                       @role('super-admin|admin')
                         <th scope="col">Action</th>
                       @endrole
@@ -106,6 +107,25 @@
                         </td>
                         <td>
                           <span class="badge bg-success">{{ $user->getRoleNames()->first() }}</span>
+                        </td>
+                        <td>
+                          {{-- @foreach ($user->permissions as $permission)
+                            <span class="badge bg-primary">{{ $permission->name }}</span>
+                          @endforeach --}}
+                          @php
+                            $rolePermissions = $user->roles->flatMap(function ($role) {
+                              return $role->permissions->pluck('name');
+                            })->unique();
+
+                            $extraPermissions = $user->getDirectPermissions()->pluck('name');
+                          @endphp
+
+                          <span class="badge bg-primary"
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="top"
+                                title="{{ $extraPermissions->isNotEmpty() ? $extraPermissions->implode(', ') : 'No extra permissions' }}">
+                            {{ $extraPermissions->count() }}
+                          </span>
                         </td>
                         @role('super-admin|admin')
                         <td>

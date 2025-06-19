@@ -16,7 +16,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Route::group(['middleware'=> 'role:super-admin|admin'], function () {   
-Route::group(['middleware'=> 'isAdmin'], function () {   
+Route::group(['middleware'=> 'auth'], function () {   
 
 
     ///************** Permissions routes **************///
