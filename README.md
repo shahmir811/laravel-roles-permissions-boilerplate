@@ -71,12 +71,9 @@ view/delete backup
 
 Seeded by `RolesTableSeeder`:
 
--   -   `super-admin` – Has all permissions
--
--   -   `admin` – Can be customized to have limited permissions
--
--   -   `user` – Basic role for app users
--
+-   `super-admin` – Has all permissions
+-   `admin` – Can be customized to have limited permissions
+-   `user` – Basic role for app users
 
 > The `super-admin` role automatically gets **all permissions**.
 
